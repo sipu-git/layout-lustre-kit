@@ -1,5 +1,3 @@
-import { Mail, Phone, MapPin } from "lucide-react";
-
 const services = [
   "Sales Automation",
   "Funnel Creation",
@@ -8,41 +6,24 @@ const services = [
 ];
 
 const works = [
-  "Green Bank",
-  "Rayform Studio",
+  "Safe Forest",
+  "The Virtual Plaza",
   "BraidPay Website",
   "Commerce Pulse",
 ];
 
-const technologies = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Framer",
-  "Laravel",
-  "GraphQL",
-];
-
-const socials = [
-  { name: "Facebook", href: "#" },
-  { name: "Instagram", href: "#" },
-  { name: "LinkedIn", href: "#" },
-  { name: "Twitter", href: "#" },
-];
-
 const Footer = () => {
   return (
-    <footer className="border-t border-border bg-card/50">
+    <footer className="border-t border-border bg-background">
       <div className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
-          <div className="col-span-2 md:col-span-3 lg:col-span-2">
+          <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-primary text-xl">✦</span>
-              <span className="text-sm text-muted-foreground uppercase tracking-wider">Company</span>
+              <span className="text-muted-foreground text-xs font-mono uppercase tracking-wider">// COMPANY</span>
             </div>
             <a href="/" className="flex items-center gap-2 mb-4">
-              <span className="text-2xl font-bold tracking-tight">TEXSORA</span>
+              <span className="text-2xl font-bold tracking-tight">Sparkradi<span className="text-primary">X</span></span>
             </a>
             <p className="text-sm text-muted-foreground max-w-xs">
               Much more than just a service provider, we want to be a true technical partner for our customers.
@@ -52,8 +33,7 @@ const Footer = () => {
           {/* Services */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-primary text-sm">✦</span>
-              <span className="text-xs text-muted-foreground uppercase tracking-wider">Services</span>
+              <span className="text-muted-foreground text-xs font-mono uppercase tracking-wider">// SERVICES</span>
             </div>
             <ul className="space-y-3">
               {services.map((service, index) => (
@@ -72,8 +52,7 @@ const Footer = () => {
           {/* Works */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-primary text-sm">✦</span>
-              <span className="text-xs text-muted-foreground uppercase tracking-wider">Works</span>
+              <span className="text-muted-foreground text-xs font-mono uppercase tracking-wider">// WORKS</span>
             </div>
             <ul className="space-y-3">
               {works.map((work, index) => (
@@ -89,81 +68,31 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Information */}
+          {/* Newsletter */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-primary text-sm">✦</span>
-              <span className="text-xs text-muted-foreground uppercase tracking-wider">Information</span>
+              <span className="text-muted-foreground text-xs font-mono uppercase tracking-wider">// NEWSLETTER</span>
             </div>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>123 Innovation Street, 56789 Techville, USA</span>
-              </li>
-              <li>
-                <a
-                  href="tel:+15559876543"
-                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  <Phone className="w-4 h-4" />
-                  +1 555 987 6543
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:hello@texsora.com"
-                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  <Mail className="w-4 h-4" />
-                  hello@texsora.com
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Socials & Tech */}
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-primary text-sm">✦</span>
-              <span className="text-xs text-muted-foreground uppercase tracking-wider">Socials</span>
+            <p className="text-sm text-muted-foreground mb-4">
+              Subscribe to get updates on our latest projects and insights.
+            </p>
+            <div className="flex gap-2">
+              <input 
+                type="email" 
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-2 bg-secondary border border-border rounded-lg text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+              />
+              <button className="px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors">
+                Subscribe
+              </button>
             </div>
-            <ul className="space-y-3 mb-8">
-              {socials.map((social, index) => (
-                <li key={index}>
-                  <a
-                    href={social.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {social.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Technologies Marquee */}
-        <div className="mt-12 pt-8 border-t border-border">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-primary text-sm">✦</span>
-            <span className="text-xs text-muted-foreground uppercase tracking-wider">Technologies</span>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            {technologies.map((tech, index) => (
-              <span
-                key={index}
-                className="px-3 py-1.5 text-xs text-muted-foreground bg-secondary rounded-full"
-              >
-                {tech}
-              </span>
-            ))}
           </div>
         </div>
 
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-border text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Texsora. All rights reserved.
+            © {new Date().getFullYear()} SparkradiX. All rights reserved.
           </p>
         </div>
       </div>
