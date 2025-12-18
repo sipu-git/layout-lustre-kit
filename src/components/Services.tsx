@@ -1,50 +1,35 @@
-import { Globe, ShoppingCart, Target, Zap, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Monitor, Code, ArrowUpRight } from "lucide-react";
 
 const services = [
   {
-    icon: Globe,
-    title: "Web Design",
-    description: "Custom, high-speed websites built for performance and scalability.",
-    color: "from-blue-500/20 to-blue-600/5",
-    iconColor: "text-blue-400",
+    icon: Monitor,
+    title: "Web And System Applications",
+    description: "Custom, High-Speed Websites Built For Performance And Scalability.",
+    href: "/services/web-development",
   },
   {
-    icon: ShoppingCart,
-    title: "E-Commerce",
-    description: "Conversion-focused online stores optimized for seamless shopping experiences.",
-    color: "from-purple-500/20 to-purple-600/5",
-    iconColor: "text-purple-400",
-  },
-  {
-    icon: Target,
-    title: "Funnel Creation",
-    description: "High-converting funnels that turn visitors into customers.",
-    color: "from-green-500/20 to-green-600/5",
-    iconColor: "text-green-400",
-  },
-  {
-    icon: Zap,
-    title: "Sales Automation",
-    description: "Smart automation to enhance conversions and streamline user journeys.",
-    color: "from-orange-500/20 to-orange-600/5",
-    iconColor: "text-orange-400",
+    icon: Code,
+    title: "Enterprise Software Development",
+    description: "Conversion-Focused Online Stores Optimized For Seamless Shopping Experiences.",
+    href: "/services/enterprise-software",
   },
 ];
 
 const Services = () => {
   return (
-    <section id="services" className="py-24 relative">
+    <section id="services" className="py-24 relative section-light">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-primary text-sm font-medium tracking-widest uppercase mb-4 block">
-            \\ Services \\
+          <span className="text-primary text-sm font-mono tracking-widest uppercase mb-4 block">
+            \\ SERVICES \\
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Your Project Deserves Real Experts
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[hsl(var(--light-foreground))] mb-6">
+            We build future-ready digital experiences
           </h2>
-          <p className="text-muted-foreground">
-            We provide end-to-end digital solutions, ensuring high performance, seamless user experience, and growth.
+          <p className="text-[hsl(var(--light-muted))]">
+            We Provide End-To-End Digital Solutions, Ensuring High Performance, Seamless User Experience, And Growth.
           </p>
         </div>
 
@@ -53,32 +38,30 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative p-8 bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300 cursor-pointer"
+              className="group p-8 bg-[hsl(var(--light-card))] border border-[hsl(var(--light-border))] rounded-2xl hover:shadow-lg transition-all duration-300"
             >
-              {/* Gradient Background */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-              
-              <div className="relative z-10">
-                <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 bg-secondary rounded-xl flex items-center justify-center">
-                    <service.icon className={`w-7 h-7 ${service.iconColor}`} />
-                  </div>
-                  <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all duration-300" />
-                </div>
-                
-                <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                  {service.description}
-                </p>
-                
-                <span className="text-primary text-sm font-medium group-hover:underline">
-                  Learn More
-                </span>
+              <div className="w-14 h-14 border border-[hsl(var(--light-border))] rounded-xl flex items-center justify-center mb-6">
+                <service.icon className="w-6 h-6 text-primary" />
               </div>
+              
+              <h3 className="text-xl font-bold text-[hsl(var(--light-foreground))] mb-3">{service.title}</h3>
+              <p className="text-[hsl(var(--light-muted))] text-sm leading-relaxed mb-6">
+                {service.description}
+              </p>
+              
+              <Link 
+                to={service.href}
+                className="inline-flex items-center gap-2 px-5 py-2.5 border border-[hsl(var(--light-border))] rounded-full text-sm text-[hsl(var(--light-foreground))] hover:border-[hsl(var(--light-foreground))] transition-colors group/btn"
+              >
+                Learn More
+                <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+              </Link>
 
               {/* Preview Image Placeholder */}
-              <div className="absolute bottom-0 right-0 w-32 h-32 opacity-20 group-hover:opacity-30 transition-opacity">
-                <div className="w-full h-full bg-gradient-to-tl from-primary/30 to-transparent rounded-tl-3xl" />
+              <div className="mt-8 aspect-video bg-gradient-to-br from-[hsl(var(--light-border))] to-transparent rounded-xl overflow-hidden">
+                <div className="w-full h-full bg-[hsl(var(--light-card))] rounded-lg shadow-inner flex items-center justify-center">
+                  <div className="w-3/4 h-3/4 border border-[hsl(var(--light-border))] rounded-lg bg-gradient-to-b from-[hsl(var(--light-background))] to-transparent" />
+                </div>
               </div>
             </div>
           ))}
