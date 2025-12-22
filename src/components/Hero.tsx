@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 pb-16 overflow-hidden bg-background">
+    <section className="relative h-[90vh] flex flex-col items-center justify-center pt-20 pb-16 overflow-hidden bg-background">
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           {/* Headline */}
@@ -24,7 +24,7 @@ const Hero = () => {
           </div>
 
           {/* Hero Image - Code Editor Mockup */}
-          <div className="animate-fade-in-up animation-delay-300 mt-16 w-full max-w-3xl relative">
+          <div className="animate-fade-in-up animation-delay-300 mt-16 w-full max-w-xl relative">
             {/* Floating Labels */}
             <div className="absolute -left-8 top-1/2 -translate-y-1/2 animate-float animation-delay-200 hidden lg:block">
               <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-full">
