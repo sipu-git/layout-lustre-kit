@@ -1,51 +1,76 @@
 import { Link } from "react-router-dom";
-import { Send, Twitter, Linkedin, Instagram, Github } from "lucide-react";
+import { Check } from "lucide-react";
+import { PlusMarker } from "@/components/ui/PlusMarker";
 
 const services = [
-  { name: "Web Development", href: "/services/web-development" },
-  { name: "Enterprise Software", href: "/services/enterprise-software" },
-  { name: "SaaS Development", href: "/services/saas-development" },
-  { name: "Digital Marketing", href: "/services/digital-marketing" },
+  { name: "Sales Automation", href: "/services/web-development" },
+  { name: "Funnel Creation", href: "/services/enterprise-software" },
+  { name: "E Commerce", href: "/services/saas-development" },
+  { name: "Web Design", href: "/services/digital-marketing" },
 ];
 
 const works = [
   { name: "Safe Forest", href: "/works" },
   { name: "The Virtual Plaza", href: "/works" },
-  { name: "BraidPay Website", href: "/works" },
-  { name: "Commerce Pulse", href: "/works" },
+  { name: "Green Govt.", href: "/works/green-governance" },
+  { name: "Rydeu Logistics", href: "/works" },
 ];
 
-const technologies = ["React", "Next.js", "Node.js", "TypeScript", "Python", "AWS"];
+const information = [
+  { name: "FAQ", href: "/#faq" },
+  { name: "Support", href: "#" },
+  { name: "Privacy Policy", href: "#" },
+];
+
+const socials = [
+  { name: "LinkedIn", href: "#" },
+  { name: "X (Twitter)", href: "#" },
+  { name: "Instagram", href: "#" },
+];
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border bg-background">
+    <footer className="bg-background">
       {/* Newsletter Section */}
-      <div className="container mx-auto px-6 py-12">
-        <div className="bg-card border border-border rounded-2xl p-8 md:p-12 relative overflow-hidden">
-          {/* Background gradient */}
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/10 to-transparent pointer-events-none" />
-          
-          <div className="relative grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-2xl md:text-3xl font-bold mb-3">
-                Subscribe to our newsletter
-              </h3>
-              <p className="text-muted-foreground">
-                Get the latest updates on our projects, insights, and industry trends delivered to your inbox.
-              </p>
+      <div className="relative">
+        <PlusMarker className="top-0 left-6" />
+        <PlusMarker className="top-0 right-6" />
+        
+        <div className="container mx-auto px-6 py-12">
+          <div className="bg-[#1a1a1a] rounded-3xl p-8 md:p-12 relative overflow-hidden">
+            {/* Background Logo */}
+            <div className="absolute top-1/2 right-8 -translate-y-1/2 opacity-10">
+              <svg width="200" height="200" viewBox="0 0 100 100" fill="currentColor" className="text-gray-400">
+                <polygon points="50,10 90,90 10,90" />
+                <text x="50" y="60" textAnchor="middle" fontSize="24" fontWeight="bold">S</text>
+              </svg>
             </div>
-            <div className="flex gap-3">
-              <div className="flex-1 relative">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="w-full px-5 py-3.5 bg-secondary border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
-                />
-              </div>
-              <button className="px-6 py-3.5 bg-primary text-primary-foreground rounded-xl font-medium hover:bg-primary/90 transition-colors flex items-center gap-2">
-                <Send className="w-4 h-4" />
-                Subscribe
+            
+            <div className="relative max-w-lg">
+              <span className="text-gray-400 text-xs font-mono uppercase tracking-wider mb-4 block">
+                // SPARKRADIX
+              </span>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
+                Let's turn your vision into scalable, high-impact digital reality.
+              </h3>
+              
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-center gap-3 text-gray-300 text-sm">
+                  <Check className="w-5 h-5 text-primary" />
+                  Get tailored tech advice from our solution architects.
+                </li>
+                <li className="flex items-center gap-3 text-gray-300 text-sm">
+                  <Check className="w-5 h-5 text-primary" />
+                  Agile, transparent, and always on time.
+                </li>
+                <li className="flex items-center gap-3 text-gray-300 text-sm">
+                  <Check className="w-5 h-5 text-primary" />
+                  We stay, support, and scale with you.
+                </li>
+              </ul>
+              
+              <button className="px-6 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors">
+                Schedule a Call
               </button>
             </div>
           </div>
@@ -57,34 +82,22 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Company Info */}
           <div className="col-span-2 md:col-span-1">
+            <span className="text-muted-foreground text-xs font-mono uppercase tracking-wider mb-4 block">
+              // COMPANY
+            </span>
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <span className="text-2xl font-bold tracking-tight">Sparkradi<span className="text-primary">X</span></span>
+              <span className="text-xl font-bold tracking-tight">Sparkradi<span className="text-primary">X</span></span>
             </Link>
-            <p className="text-sm text-muted-foreground mb-6 max-w-xs">
-              Much more than just a service provider, we want to be a true technical partner for our customers.
+            <p className="text-sm text-muted-foreground max-w-xs">
+              Much More Than Just A Service Provider, We Want To Be A True Technical Partner For Our Customers.
             </p>
-            {/* Social Links */}
-            <div className="flex gap-3">
-              <a href="#" className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors">
-                <Twitter className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors">
-                <Linkedin className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors">
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors">
-                <Github className="w-4 h-4" />
-              </a>
-            </div>
           </div>
 
           {/* Services */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-muted-foreground text-xs font-mono uppercase tracking-wider">// SERVICES</span>
-            </div>
+            <span className="text-muted-foreground text-xs font-mono uppercase tracking-wider mb-4 block">
+              // SERVICES
+            </span>
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
@@ -101,9 +114,9 @@ const Footer = () => {
 
           {/* Works */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-muted-foreground text-xs font-mono uppercase tracking-wider">// WORKS</span>
-            </div>
+            <span className="text-muted-foreground text-xs font-mono uppercase tracking-wider mb-4 block">
+              // WORKS
+            </span>
             <ul className="space-y-3">
               {works.map((work, index) => (
                 <li key={index}>
@@ -118,43 +131,41 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Technologies */}
+          {/* Information */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-muted-foreground text-xs font-mono uppercase tracking-wider">// TECHNOLOGIES</span>
-            </div>
+            <span className="text-muted-foreground text-xs font-mono uppercase tracking-wider mb-4 block">
+              // INFORMATION
+            </span>
             <ul className="space-y-3">
-              {technologies.map((tech, index) => (
+              {information.map((item, index) => (
                 <li key={index}>
-                  <span className="text-sm text-muted-foreground">
-                    {tech}
-                  </span>
+                  <Link
+                    to={item.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Socials */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-muted-foreground text-xs font-mono uppercase tracking-wider">// CONTACT</span>
-            </div>
+            <span className="text-muted-foreground text-xs font-mono uppercase tracking-wider mb-4 block">
+              // SOCIALS
+            </span>
             <ul className="space-y-3">
-              <li>
-                <a href="mailto:hello@sparkradix.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  hello@sparkradix.com
-                </a>
-              </li>
-              <li>
-                <span className="text-sm text-muted-foreground">
-                  Remote First
-                </span>
-              </li>
-              <li>
-                <span className="text-sm text-muted-foreground">
-                  Global Team
-                </span>
-              </li>
+              {socials.map((social, index) => (
+                <li key={index}>
+                  <a
+                    href={social.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {social.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
